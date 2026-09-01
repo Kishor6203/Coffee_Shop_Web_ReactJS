@@ -1,0 +1,792 @@
+/* =========================================================
+   FOODIEPLACE — VISIT US
+   Production-ready / Premium Hospitality UI
+   ========================================================= */
+
+   .visit {
+    --bg: #f5f1ea;
+    --surface: #fffdf9;
+    --surface-soft: #eee8df;
+    --ink: #201b17;
+    --ink-soft: #625951;
+    --muted: #81776d;
+    --accent: #a8733f;
+    --accent-dark: #80502c;
+    --line: rgba(32, 27, 23, .11);
+    --line-light: rgba(32, 27, 23, .07);
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+  
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: clamp(85px, 9vw, 135px) 0;
+    color: var(--ink);
+    background: var(--bg);
+    font-family: var(--sans);
+    isolation: isolate;
+  }
+  
+  /* Subtle architectural background */
+  .visit::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: -430px;
+    right: -300px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba(168, 115, 63, .10),
+      transparent 68%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .visit::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .25;
+    background-image:
+      linear-gradient(rgba(32,27,23,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(32,27,23,.035) 1px, transparent 1px);
+    background-size: 70px 70px;
+    mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 80%, transparent);
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  .visit-container {
+    position: relative;
+    width: min(1260px, calc(100% - 80px));
+    margin-inline: auto;
+  }
+  
+  /* =========================================================
+     HEADER
+     ========================================================= */
+  
+  .visit-header {
+    margin-bottom: clamp(42px, 5vw, 64px);
+  }
+  
+  .visit-kicker {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 23px;
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  .visit-line {
+    width: 30px;
+    height: 1px;
+    background: var(--accent);
+  }
+  
+  .visit-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: end;
+    gap: 70px;
+  }
+  
+  .visit-heading h2 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(50px, 6vw, 80px);
+    font-weight: 400;
+    line-height: .92;
+    letter-spacing: -.055em;
+  }
+  
+  .visit-heading h2 em {
+    color: var(--accent);
+    font-style: italic;
+  }
+  
+  .visit-heading > p {
+    margin: 0 0 5px;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  
+  /* =========================================================
+     MAIN PANEL
+     ========================================================= */
+  
+  .visit-layout {
+    display: grid;
+    grid-template-columns: .84fr 1.16fr;
+    min-height: 610px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow:
+      0 20px 60px rgba(46, 32, 21, .07),
+      0 2px 8px rgba(46, 32, 21, .035);
+  }
+  
+  /* =========================================================
+     INFORMATION
+     ========================================================= */
+  
+  .visit-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 42px 44px;
+    border-right: 1px solid var(--line);
+  }
+  
+  .visit-intro {
+    display: flex;
+    gap: 17px;
+    padding-bottom: 27px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .intro-number {
+    flex: 0 0 auto;
+    color: rgba(168, 115, 63, .65);
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: .08em;
+  }
+  
+  .intro-label,
+  .detail-label {
+    display: block;
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  
+  .intro-label {
+    margin-bottom: 8px;
+  }
+  
+  .visit-intro h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+  }
+  
+  .visit-intro h3 em {
+    color: var(--accent);
+  }
+  
+  /* =========================================================
+     DETAILS
+     ========================================================= */
+  
+  .visit-detail {
+    display: flex;
+    gap: 15px;
+    padding: 21px 0;
+    border-bottom: 1px solid var(--line-light);
+  }
+  
+  .detail-icon {
+    display: grid;
+    flex: 0 0 34px;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(168,115,63,.25);
+    border-radius: 50%;
+    color: var(--accent);
+    background: rgba(168,115,63,.055);
+    font-size: 13px;
+  }
+  
+  .detail-content {
+    min-width: 0;
+  }
+  
+  .detail-label {
+    margin-bottom: 7px;
+    color: var(--muted);
+  }
+  
+  .detail-content p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  
+  /* =========================================================
+     HOURS
+     ========================================================= */
+  
+  .hours {
+    display: grid;
+    gap: 8px;
+  }
+  
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  
+  .hours-row strong {
+    color: var(--ink);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  
+  .hours-row.holiday {
+    opacity: .55;
+  }
+  
+  /* =========================================================
+     ACTION LINKS
+     ========================================================= */
+  
+  .text-action,
+  .phone-link {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .text-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 9px;
+    color: var(--accent);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  .text-action span {
+    font-size: 12px;
+  }
+  
+  .phone-link {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 400;
+    transition: color 180ms ease;
+  }
+  
+  .phone-link:hover {
+    color: var(--accent);
+  }
+  
+  .contact-note {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+  
+  /* =========================================================
+     AMENITIES
+     ========================================================= */
+  
+  .amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: auto;
+    padding: 22px 0 18px;
+  }
+  
+  .amenity {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  
+  .amenity i {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(168,115,63,.25);
+    border-radius: 50%;
+    color: var(--accent);
+    font-size: 8px;
+    font-style: normal;
+  }
+  
+  /* =========================================================
+     ACTIONS
+     ========================================================= */
+  
+  .visit-actions {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .directions-btn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 8px 0 17px;
+    border: 1px solid var(--ink);
+    color: #fff;
+    background: var(--ink);
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      background 180ms ease,
+      color 180ms ease,
+      transform 180ms ease;
+  }
+  
+  .directions-btn:hover {
+    color: var(--ink);
+    background: transparent;
+    transform: translateY(-1px);
+  }
+  
+  .action-arrow {
+    display: grid;
+    place-items: center;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    color: var(--ink);
+    background: #fff;
+    font-size: 12px;
+  }
+  
+  .call-btn {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line);
+    color: var(--accent);
+    background: var(--surface);
+    cursor: pointer;
+    transition:
+      color 180ms ease,
+      background 180ms ease,
+      border-color 180ms ease;
+  }
+  
+  .call-btn:hover {
+    color: #fff;
+    border-color: var(--accent);
+    background: var(--accent);
+  }
+  
+  /* =========================================================
+     MAP
+     ========================================================= */
+  
+  .visit-map-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #e5dfd6;
+  }
+  
+  .map-topbar,
+  .map-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex: 0 0 auto;
+    padding-inline: 18px;
+    color: var(--ink);
+    background: rgba(255,253,249,.9);
+  }
+  
+  .map-topbar {
+    min-height: 50px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .map-footer {
+    min-height: 48px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    font-size: 9px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  
+  .map-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #64865d;
+    box-shadow: 0 0 0 4px rgba(100,134,93,.1);
+  }
+  
+  .map-location {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  .visit-map {
+    position: relative;
+    flex: 1;
+    min-height: 500px;
+  }
+  
+  .visit-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: 0;
+    filter: grayscale(.12) saturate(.72) contrast(.96);
+  }
+  
+  /* =========================================================
+     MAP CARD
+     ========================================================= */
+  
+  .map-card {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    max-width: 280px;
+    padding: 12px 15px;
+    border: 1px solid rgba(32,27,23,.1);
+    background: rgba(255,253,249,.94);
+    box-shadow: 0 12px 35px rgba(32,27,23,.15);
+    backdrop-filter: blur(12px);
+  }
+  
+  .map-pin {
+    display: grid;
+    flex: 0 0 34px;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--ink);
+    font-size: 13px;
+  }
+  
+  .map-card strong {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .map-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+  }
+  
+  /* Map footer button */
+  .map-footer button {
+    padding: 0;
+    border: 0;
+    color: var(--accent-dark);
+    background: transparent;
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  /* =========================================================
+     BOTTOM MESSAGE
+     ========================================================= */
+  
+  .visit-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    max-width: 720px;
+    margin: 58px auto 0;
+  }
+  
+  .bottom-mark {
+    display: grid;
+    flex: 0 0 44px;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(168,115,63,.25);
+    border-radius: 50%;
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+  
+  .visit-bottom p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  
+  .visit-bottom strong {
+    color: var(--ink);
+  }
+  
+  /* =========================================================
+     ACCESSIBILITY
+     ========================================================= */
+  
+  .directions-btn:focus-visible,
+  .call-btn:focus-visible,
+  .text-action:focus-visible,
+  .phone-link:focus-visible,
+  .map-footer button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  
+  /* =========================================================
+     TABLET
+     ========================================================= */
+  
+  @media (max-width: 1050px) {
+    .visit-container {
+      width: calc(100% - 60px);
+    }
+  
+    .visit-heading {
+      gap: 45px;
+    }
+  
+    .visit-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .visit-info {
+      padding: 35px;
+    }
+  }
+  
+  /* =========================================================
+     MOBILE
+     ========================================================= */
+  
+  @media (max-width: 780px) {
+    .visit {
+      padding: 85px 0 95px;
+    }
+  
+    .visit-container {
+      width: calc(100% - 36px);
+    }
+  
+    .visit-heading {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  
+    .visit-layout {
+      grid-template-columns: 1fr;
+    }
+  
+    .visit-info {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+  
+    .visit-map {
+      min-height: 430px;
+    }
+  
+    .visit-map iframe {
+      min-height: 430px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .visit {
+      padding: 72px 0 82px;
+    }
+  
+    .visit-container {
+      width: calc(100% - 28px);
+    }
+  
+    .visit-header {
+      margin-bottom: 40px;
+    }
+  
+    .visit-kicker {
+      margin-bottom: 18px;
+      font-size: 9px;
+    }
+  
+    .visit-line {
+      width: 24px;
+    }
+  
+    .visit-heading h2 {
+      font-size: clamp(43px, 12vw, 57px);
+      letter-spacing: -.05em;
+    }
+  
+    .visit-heading > p {
+      font-size: 13px;
+    }
+  
+    .visit-info {
+      padding: 28px 21px;
+    }
+  
+    .visit-intro h3 {
+      font-size: 27px;
+    }
+  
+    .visit-detail {
+      padding: 19px 0;
+    }
+  
+    .hours-row {
+      flex-direction: column;
+      gap: 3px;
+    }
+  
+    .phone-link {
+      font-size: 19px;
+    }
+  
+    .amenities {
+      gap: 10px 14px;
+      margin-top: 5px;
+    }
+  
+    .visit-actions {
+      margin-top: 4px;
+    }
+  
+    .visit-map {
+      min-height: 360px;
+    }
+  
+    .visit-map iframe {
+      min-height: 360px;
+    }
+  
+    .map-card {
+      left: 12px;
+      bottom: 12px;
+      max-width: calc(100% - 24px);
+    }
+  
+    .map-footer {
+      min-height: 46px;
+      padding-inline: 12px;
+    }
+  
+    .visit-bottom {
+      align-items: flex-start;
+      margin-top: 42px;
+    }
+  
+    .bottom-mark {
+      width: 40px;
+      height: 40px;
+      flex-basis: 40px;
+    }
+  
+    .visit-bottom p {
+      font-size: 11px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .visit-info {
+      padding: 25px 17px;
+    }
+  
+    .visit-heading h2 {
+      font-size: 40px;
+    }
+  
+    .amenities {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .visit-actions {
+      flex-direction: column;
+    }
+  
+    .call-btn {
+      width: 100%;
+      flex-basis: 46px;
+    }
+  }
+  
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .directions-btn,
+    .call-btn,
+    .phone-link {
+      transition: none;
+    }
+  }
+  
