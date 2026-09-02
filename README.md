@@ -42,7 +42,7 @@ Installation
 
 Clone this repository:
 
-git clone https://github.com/your-username/coffee-shop.git
+git clone https://github.com/kishor6203/coffee-shop.git
 
 
 Move into the project folder:
