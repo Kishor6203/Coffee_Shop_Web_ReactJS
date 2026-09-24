@@ -82,10 +82,6 @@ function Footer() {
     }
   };
 
-  /* =========================================
-     NEWSLETTER
-  ========================================= */
-
   const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
 
