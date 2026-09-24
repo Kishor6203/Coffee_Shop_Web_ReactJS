@@ -89,26 +89,6 @@ const Contact = () => {
     setErrors({});
 
     try {
-      /*
-       * Production integration:
-       *
-       * Replace this timeout with your API request.
-       *
-       * Example:
-       *
-       * const response = await fetch("/api/reservations", {
-       *   method: "POST",
-       *   headers: {
-       *     "Content-Type": "application/json",
-       *   },
-       *   body: JSON.stringify(formData),
-       * });
-       *
-       * if (!response.ok) {
-       *   throw new Error("Reservation failed");
-       * }
-       */
-
       await new Promise((resolve) => {
         setTimeout(resolve, 1000);
       });
