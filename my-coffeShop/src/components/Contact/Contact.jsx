@@ -137,10 +137,6 @@ const Contact = () => {
     >
       <div className="contact-container">
 
-        {/* =====================================================
-            SECTION HEADER
-        ====================================================== */}
-
         <header className="contact-header">
 
           <div className="contact-kicker">
