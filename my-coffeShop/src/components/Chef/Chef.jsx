@@ -10,10 +10,6 @@ const Chef = () => {
     >
       <div className="chef-container">
 
-        {/* ==============================================
-            SECTION INTRO
-        ================================================== */}
-
         <div className="chef-intro">
 
           <div className="chef-eyebrow">
